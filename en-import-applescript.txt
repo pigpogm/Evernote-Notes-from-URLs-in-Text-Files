@@ -1,0 +1,8 @@
+open for access theFile
+set fileContents to read theFile using delimiter {linefeed}
+close access theFile
+repeat with thisLine in fileContents
+	tell application "Evernote"
+		create note from url thisLine
+	end tell
+end repeat
